@@ -12,6 +12,8 @@ import {ScegliUserPageModule} from '../pages/scegli-user/scegli-user.module';
 import {DoWorkPageModule} from '../pages/do-work/do-work.module';
 import { registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
+import {OneSignal} from '@ionic-native/onesignal';
+//import {LocalNotifications} from '@ionic-native/local-notifications';
 
 registerLocaleData(localeIt, 'it');
 
@@ -39,7 +41,9 @@ registerLocaleData(localeIt, 'it');
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    OneSignal
+    //LocalNotifications
   ]
 })
 export class AppModule {}
