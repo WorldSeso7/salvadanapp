@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SalvadanApp</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding text-center margin-top>
+  <h1>
+    Ciao {{utente}}!
+  </h1>
+  <div *ngIf="dataUltimoUpdate">
+    Ultimo aggiornamento {{ dataUltimoUpdate | date:'EEEE dd LLLL yyyy':'':'it' }} alle {{ dataUltimoUpdate | date:'HH:mm:ss':'':'it' }}
+  </div>
+  <div *ngIf="dataUltimoPagamento">
+    Ultimo pagamento {{ dataUltimoPagamento | date:'EEEE dd LLLL yyyy':'':'it' }} alle {{ dataUltimoPagamento | date:'HH:mm:ss':'':'it' }}
+  </div>
+  <br>
+  <br>
+  <div margin-top>
+    <b>Aggiungi soldino</b>
+    <div margin-top>
+      <a ion-button round (click)="onAddSoldino(1)">+1</a>
+      <a ion-button round (click)="onAddSoldino(2)">+2</a>
+      <a ion-button round (click)="onAddSoldino(3)">+3</a>
+    </div>
+  </div>
+  <br>
+  <div margin-top>
+    <h3>
+      Saldo attuale: {{ saldo }}€
+    </h3>
+  </div>
+  <br>
+  <div margin-top>
+    <a ion-button round (click)="onDoSaldo()">Salda debito</a>
+  </div>
+  <div margin-top *ngIf="hasPagato">
+    <img src="/assets/imgs/emoticons.jpg">
+  </div>
+</ion-content>
