@@ -1,6 +1,6 @@
 {
   "name": "SalvadanApp",
-  "app_id": "",
+  "app_id": "089e9882",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
